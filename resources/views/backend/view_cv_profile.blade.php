@@ -187,7 +187,6 @@
                   <div class="card-box">
                       <h4 class="header-title mt-0 mb-3"><u>Job Experience</u></h4>
                       <div class="">
-
                           @forelse($job_experiences as $job_experience)
                               <div class="">
                                   <h5 class="text-custom m-b-5 text-capitalize">{{ $job_experience->company_name ?? ''}}</h5>

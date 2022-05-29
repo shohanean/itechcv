@@ -387,7 +387,7 @@ class JobSeekerController extends Controller
         $Obj = CareerObjective::where('user_id', $user_id)->first();
         $auth = User::findOrFail($user_id);
         $personal_info = PersonalInformation::where('user_id', $user_id)->first();
-        $job_experiences = JobExperience::where('user_id', $user_id)->get();
+        $job_experiences = JobExperience::where('user_id', $user_id)->orderBy('job_from', 'desc')->get();
         $jskills = JobSkill::where('user_id', $user_id)->with('skill')->get();
         $portfolios = Portfolio::where('user_id', $user_id)->get();
         $marketplaces = Marketplace::where('user_id', $user_id)->get();
