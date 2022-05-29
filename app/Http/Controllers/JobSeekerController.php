@@ -68,7 +68,7 @@ class JobSeekerController extends Controller
         $portfolios = Portfolio::all();
 
         //         Show Data
-        $educations = Education::where('user_id', $user_id)->with('degree')->with('board')->get();
+        $educations = Education::where('user_id', $user_id)->with('degree')->with('board')->orderBy('degree_id', 'DESC')->get();
         $trainings = Training::where('user_id', $user_id)->with('country')->get();
         $Obj = CareerObjective::where('user_id', $user_id)->first();
         $JobSkill = JobSkill::where('user_id', $user_id)->with('skill')->get();
