@@ -187,6 +187,39 @@
             </div>
 
             <div class="card-box">
+              <h4 class="header-title mb-3">Trainings</h4>
+
+              <div class="table-responsive">
+                <table class="table m-b-0">
+                  <thead>
+                    <tr>
+                      <th>SL</th>
+                      <th>Training Title</th>
+                      <th>Country</th>
+                      <th>Training Institute</th>
+                      <th>Year</th>
+                      <th>Duration</th>
+                      <th>Topic Covered</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach($trainings as $training)
+                        <tr>
+                            <td>{{ $loop->index +1 ?? ''}}</td>
+                            <td>{{ $training->training_name ?? '' }}</td>
+                            <td>{{ $training->country->name ?? '' }}</td>
+                            <td>{{ $training->training_institute ?? '' }}</td>
+                            <td>{{ $training->training_year ?? '' }}</td>
+                            <td>{{ $training->training_duration ?? '' }}</td>
+                            <td>{{ $training->topic_cover ?? '' }}</td>
+                        </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card-box">
               <h4 class="header-title mb-3">My Portfolio</h4>
 
               <div class="table-responsive">

@@ -392,8 +392,9 @@ class JobSeekerController extends Controller
         $portfolios = Portfolio::where('user_id', $user_id)->get();
         $marketplaces = Marketplace::where('user_id', $user_id)->get();
         $educations = Education::where('user_id', $user_id)->orderBy('degree_id', 'DESC')->get();
+        $trainings = Training::where('user_id', $user_id)->with('country')->get();
 
-        return view('backend.view_cv_profile', ['educations' =>$educations, 'marketplaces' =>$marketplaces,'portfolios' =>$portfolios, 'jskills' =>$jskills ,'job_experiences' => $job_experiences,'Obj' => $Obj,'auth' =>$auth, 'personal_info' => $personal_info]);
+        return view('backend.view_cv_profile', ['educations' =>$educations, 'marketplaces' =>$marketplaces,'portfolios' =>$portfolios, 'jskills' =>$jskills ,'job_experiences' => $job_experiences,'Obj' => $Obj,'auth' =>$auth, 'personal_info' => $personal_info, 'trainings' => $trainings]);
     }
 
     function UpazilaList($id){
@@ -525,8 +526,9 @@ class JobSeekerController extends Controller
         $jskills = JobSkill::where('user_id', $user_id)->with('skill')->get();
         $portfolios = Portfolio::where('user_id', $user_id)->get();
         $marketplaces = Marketplace::where('user_id', $user_id)->get();
-        $educations = Education::where('user_id', $user_id)->get();
-        return view('backend.live_preview', [ 'educations' => $educations, 'marketplaces' =>$marketplaces,'portfolios' =>$portfolios, 'jskills' =>$jskills ,'job_experiences' => $job_experiences,'Obj' => $Obj,'auth' =>$auth, 'personal_info' => $personal_info]);
+        $educations = Education::where('user_id', $user_id)->orderBy('degree_id', 'DESC')->get();
+        $trainings = Training::where('user_id', $user_id)->with('country')->get();
+        return view('backend.live_preview', [ 'educations' => $educations, 'marketplaces' =>$marketplaces,'portfolios' =>$portfolios, 'jskills' =>$jskills ,'job_experiences' => $job_experiences,'Obj' => $Obj,'auth' =>$auth, 'personal_info' => $personal_info, 'trainings' => $trainings]);
     }
 
     function pdfDownload()
