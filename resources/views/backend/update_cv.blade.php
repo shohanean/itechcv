@@ -801,7 +801,7 @@
                                                         @enderror
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <label for="objects">Career Objective</label>
+                                                        <label for="objects">Career Objective *</label>
                                                         <textarea name="objects" id="objects" rows="5" cols="50" class="form-control objects @error('objects') is-invalid @enderror" minlength="200" maxlength="500">{{ $Obj->job_objective }}</textarea>
                                                         @error('objects')
                                                         <span class="invalid-feedback" role="alert">
