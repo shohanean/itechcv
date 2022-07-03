@@ -817,7 +817,7 @@
                                                 <form action="{{ route('JobObjectivePost') }}" method="post">
                                                     @csrf
                                                     <div class="form-group col-md-12">
-                                                        <label for="objects">CV Objective</label>
+                                                        <label for="objects">CV Objective *</label>
                                                         @if (session('success'))
                                                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                                 <strong>{{ Auth::user()->name }}!</strong> {{ session('success') }}.
