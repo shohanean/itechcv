@@ -225,6 +225,7 @@
                               <tr>
                                   <th>SL</th>
                                   <th>Degree Title</th>
+                                  <th>Institute</th>
                                   <th>Title</th>
                                   <th>Board Name</th>
                                   <th>Passing Year</th>
@@ -236,6 +237,7 @@
                                   <tr>
                                       <td>{{ $loop->index +1 ?? ''}}</td>
                                       <td>{{ $education->degree->degree_name ?? ''}}</td>
+                                      <td>{{ $education->institute ?? '' }}</td>
                                       <td>{{ $education->degreeTitle->degree_title ?? ''}}</td>
                                       <td>{{ $education->board->board_name ?? ''}}</td>
                                       <td>{{ $education->passing_year ?? ''}}</td>

@@ -250,7 +250,7 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-3">
                                                         <label for="dob" class="col-form-label">Date of Birth</label><br>
-                                                        <input type="text" class="form-control col-md-6" value="{{ $personal_info->dob ?? old('dob') }}" name="dob" id="dob" >
+                                                        <input type="text" class="form-control col-md-6" value="{{ $personal_info->dob ?? old('dob') }}" name="dob" id="dob">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="interested_location" class="col-form-label">Preferred Job Location(Max 3)</label><br>
@@ -433,6 +433,7 @@
                                                 <tr class="text-center">
                                                     <th>SL</th>
                                                     <th>Degree</th>
+                                                    <th>Institute</th>
                                                     <th>Title</th>
                                                     <th>Board</th>
                                                     <th>Year</th>
@@ -445,6 +446,7 @@
                                                     <tr class="text-center">
                                                         <th>{{ $loop->index + 1 ?? "N/A"}}</th>
                                                         <td>{{ $education->degree->degree_name}}</td>
+                                                        <td>{{ $education->institute ?? "N/A"}}</td>
                                                         <td>{{ $education->degreeTitle->degree_title ?? "N/A"}}</td>
                                                         <td>{{ $education->board->board_name ?? "N/A"}}</td>
                                                         <td>{{ $education->passing_year ?? "N/A"}}</td>
