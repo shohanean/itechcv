@@ -61,8 +61,15 @@
             <div class="card-box">
               <h4 class="header-title mt-0 m-b-20">Personal Information</h4>
               <div class="panel-body">
+                @if ($Obj->career_summary)
+                    <h6>Career Summary</h6>
+                    <p class="text-muted font-13">
+                        {{ $Obj->career_summary ?? '' }}
+                    </p>
+                @endif
+                <h6>Career Objective</h6>
                 <p class="text-muted font-13">
-                  {{ $Obj->job_objective  ?? ''}}
+                    {{ $Obj->job_objective ?? '' }}
                 </p>
                 <hr>
 

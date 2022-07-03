@@ -782,7 +782,6 @@
                                                 <form action="{{ route('JobObjectiveUpdate') }}" method="post">
                                                     @csrf
                                                     <div class="form-group col-md-12">
-                                                        <label for="objects">Career Objective</label>
                                                         @if (session('objectsuccess'))
                                                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                                 <strong>{{ Auth::user()->name }}!</strong> {{ session('objectsuccess') }}.
@@ -791,11 +790,23 @@
                                                                 </button>
                                                             </div>
                                                         @endif
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label for="objects">Career Summary</label>
+                                                        <textarea name="career_summary" id="career_summary" rows="5" cols="50" class="form-control @error('career_summary') is-invalid @enderror">{{ $Obj->career_summary }}</textarea>
+                                                        @error('career_summary')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label for="objects">Career Objective</label>
                                                         <textarea name="objects" id="objects" rows="5" cols="50" class="form-control objects @error('objects') is-invalid @enderror" minlength="200" maxlength="500">{{ $Obj->job_objective }}</textarea>
                                                         @error('objects')
                                                         <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
                                                         @enderror
                                                     </div>
                                                     <ul class="pager wizard wizardlist fpad">
@@ -1030,7 +1041,7 @@
                                                         <td class="text-capitalize">{{ $e->company_name }}</td>
                                                         <td class="text-capitalize">{{ $e->designation }}</td>
                                                         <td>{{ $e->job_from }}</td>
-                                                        <td class="text-capitalize">                                                          
+                                                        <td class="text-capitalize">
                                                           @if($e->job_to == 'present')
                                                             Continuing
                                                           @else

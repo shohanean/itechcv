@@ -258,9 +258,10 @@ class JobSeekerController extends Controller
         ]);
         CareerObjective::where('user_id', Auth::user()->id)->update([
             'job_objective' => $request->objects,
+            'career_summary' => $request->career_summary,
             'updated_at' => Carbon::now()
         ]);
-        return back()->with('success', 'CV Objective Updated Successfully');
+        return back()->with('objectsuccess', 'CV Updated Successfully');
     }
 
     function JobSkillPost(Request $request){
