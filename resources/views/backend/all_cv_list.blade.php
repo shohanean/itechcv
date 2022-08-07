@@ -37,7 +37,7 @@
                               <th>SL</th>
                               <th>Seeker Name</th>
                               <th>Skills</th>
-                              <th >Location</th>
+                              <th>Location</th>
                               <th>Phone</th>
                               <th>Email</th>
                               <th>Action</th>
@@ -48,7 +48,7 @@
                                 <tr>
                                     <td class="text-center"><b>{{ $allcvs->firstItem() + $key }}</b></td>
                                     <td>
-                                        <a href="javascript: void(0);" class="text-body">
+                                        <a target="_blank" href="{{ route('IndividualCV', $allcv->user_id) }}" class="text-body">
                                             <img src="{{ $allcv->user_profile != null ? asset('images/profile/'.$allcv->user_profile) : asset('images/profile/default-avatar.png') }}" alt="{{ $allcv->user->name }}"
                                                  title="contact-img" class="rounded-circle avatar-sm" width="40">
                                             <span class="ml-2">{{ $allcv->user->name }}</span>
@@ -73,17 +73,22 @@
 
                                     <td>
                                         @isset($allcv->phone)
+                                            <span class="badge badge-dark"><i class="fa fa-phone"></i></span>
                                             <span class="badge badge-success">{{ $allcv->phone }}</span>
                                         @else
                                             <span class="badge badge-danger">Not Yet</span>
                                         @endisset
                                     </td>
                                     <td>
+                                        <span class="badge badge-dark"><i class="fa fa-envelope"></i></span>
                                         <span class="badge badge-success">{{ $allcv->user->email }}</span>
                                     </td>
 
                                     <td class="text-center">
-                                        <a class="btn btn-outline-purple" target="_blank" href="{{ route('IndividualCV', $allcv->user_id) }}">View</a>
+                                        <a class="btn btn-outline-purple" target="_blank" href="{{ route('IndividualCV', $allcv->user_id) }}">
+                                            <i class="fa fa-eye"></i>
+                                            View
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
