@@ -230,7 +230,7 @@ class AdminController extends Controller
         $portfolios = Portfolio::where('user_id', $p_id)->get();
         $marketplaces = Marketplace::where('user_id', $p_id)->get();
         $educations = Education::where('user_id', $p_id)->get();
-
+        $trainings = Training::where('user_id', $p_id)->with('country')->get();
         return view('backend.view_cv_profile', [
             'educations' =>$educations,
             'marketplaces' =>$marketplaces,
@@ -238,6 +238,7 @@ class AdminController extends Controller
             'jskills' =>$jskills ,
             'job_experiences' => $job_experiences,
             'Obj' => $Obj,
+            'trainings' => $trainings,
 //            'auth' =>$auth,
             'personal_info' => $personal_info
         ]);
