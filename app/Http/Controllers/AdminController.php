@@ -322,16 +322,17 @@ class AdminController extends Controller
         }
     }
 
-    function AllCVList(){
+    function AllCVList(Request $request){
 
-
+        // return $request;
         $user_id = User::whereIn('user_role', [2,3])->get();
 
         foreach($user_id as $ids){
             $arr[] = $ids->id ;
         }
 
-        $allcvs = PersonalInformation::whereNotIn('user_id', $arr)->latest()->paginate();
+        // $allcvs = PersonalInformation::whereNotIn('user_id', $arr)->latest()->get();
+        $allcvs = PersonalInformation::whereNotIn('user_id', $arr)->where('phone',"like",'%'.$request->p_n.'%')->latest()->paginate();
 
         return view('backend.all_cv_list', ['allcvs' =>$allcvs]);
     }

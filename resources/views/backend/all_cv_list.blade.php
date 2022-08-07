@@ -15,13 +15,15 @@
                     <i class="fa fa-search"></i>
                     Search
                   </h4>
-                  <div class="row">
-                    <input class="col-4 form-control" type="text" name="" placeholder="Search by Phone Number">
-                    <input class="col-4 form-control" type="text" name="" placeholder="Search by Email Address">
-                    <div class="col-4">
-                      <button type="button" class="btn btn-success form-control">Search Now</button>
-                    </div>
-                  </div>
+                    <form action="" method="GET">
+                        <div class="row">
+                            <input class="col-4 form-control" type="text" name="p_n" placeholder="Search by Phone Number" value="@isset($_GET['p_n']){{$_GET['p_n']}}@endisset">
+                            <input disabled class="col-4 form-control" type="text" name="e_a" placeholder="Search by Email Address">
+                            <div class="col-4">
+                            <button type="submit" class="btn btn-success form-control">Search Now</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
               </div>
             </div>
