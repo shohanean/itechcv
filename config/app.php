@@ -176,7 +176,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
 
     ],

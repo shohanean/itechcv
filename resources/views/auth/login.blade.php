@@ -67,6 +67,7 @@
     <div class="row mt-5 w-100 text-center" style="position:absolute;bottom:-20%;">
         <div class="col-sm-12">
             <p>Copyright © {{ date('Y')}}<a href="{{ url('/') }}"> iTechCV</a> All Rights Reserved</p>
+            <p>Creative IT Institute</p>
         </div>
     </div>
 </div>
