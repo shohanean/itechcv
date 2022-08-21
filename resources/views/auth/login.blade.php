@@ -60,7 +60,7 @@
 
     <div class="row m-t-50">
         <div class="col-sm-12 text-center">
-            <p class="text-muted">Dont have an account? <a href="{{ route('register') }}" class="text-dark m-l-5"><b>Sign
+            <p class="text-muted">Don't have an account? <a href="{{ route('register') }}" class="text-dark m-l-5"><b>Sign
                         Up</b></a></p>
         </div>
     </div>
