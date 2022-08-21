@@ -33,7 +33,6 @@
                                                        @endforeach
                                                    @endisset
                                                    type="checkbox" name="subject_id[]" value="{{ $subject->id }}">
-                                                   <p>{{$subject->subject_icon}}</p>
                                             <img width="50" src="{{ asset('images/icons').'/'.$subject->subject_icon }}" alt="{{ $subject->subject_name }}">
                                             <h4 id="txtcolor{{ $subject->id }}" class="no-m">{{ $subject->subject_name }}</h4>
                                         </label>
