@@ -258,11 +258,11 @@
                                                             <option value="">Select One</option>
                                                             @foreach ($districts as $district)
                                                                 <option
-                                                                    @isset($personal_info->interested_location)
-                                                                @foreach(json_decode($personal_info->interested_location) as $val)
-                                                                    @if(json_decode($val) == $district->id) selected @endif
-                                                                @endforeach
-                                                                    @endisset
+                                                                    @if($personal_info->interested_location != 'null')
+                                                                        @foreach(json_decode($personal_info->interested_location) as $val)
+                                                                            @if(json_decode($val) == $district->id) selected @endif
+                                                                        @endforeach
+                                                                    @endif
                                                                 value="{{ $district->id }}">{{ $district->name }}</option>
                                                             @endforeach
                                                         </select>
