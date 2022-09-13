@@ -333,8 +333,8 @@ class AdminController extends Controller
         }
 
         // $allcvs = PersonalInformation::whereNotIn('user_id', $arr)->latest()->get();
+        $allcvs = PersonalInformation::whereNotIn('user_id', $arr)->where('phone',"like",'%'.$request->p_n.'%')->latest()->paginate();
         if($request->search_by == 1){
-            $allcvs = PersonalInformation::whereNotIn('user_id', $arr)->where('phone',"like",'%'.$request->p_n.'%')->latest()->paginate();
         }else{
             // $allcvs = PersonalInformation::whereNotIn('user_id', $arr)->user->where('email',"like",'%'.$request->p_n.'%')->latest()->paginate();
         }
