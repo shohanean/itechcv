@@ -18,7 +18,11 @@
                     <form action="" method="GET">
                         <div class="row">
                             <input class="col-4 form-control" type="text" name="p_n" placeholder="Search by Phone Number" value="@isset($_GET['p_n']){{$_GET['p_n']}}@endisset">
-                            <input disabled class="col-4 form-control" type="text" name="e_a" placeholder="Search by Email Address">
+                            <select name="search_by" class="col-4 form-control">
+                                <option value="1">Search By Phone Number</option>
+                                {{-- <option value="2">Search By Email Address</option> --}}
+                            </select>
+                            {{-- <input disabled class="col-4 form-control" type="text" name="e_a" placeholder="Search by Email Address"> --}}
                             <div class="col-4">
                             <button type="submit" class="btn btn-success form-control">Search Now</button>
                             </div>
