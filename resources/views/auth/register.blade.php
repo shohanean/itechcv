@@ -215,7 +215,7 @@
                 <div class="col-6">
                     <label for="sphone">Phone</label>
                     <div class="form-group">
-                        <input class="form-control @error('phone') is-invalid @enderror" name="phone" type="text"
+                        <input required class="form-control @error('phone') is-invalid @enderror" name="phone" type="text"
                                id="sphone"
                                placeholder="Enter Phone">
 

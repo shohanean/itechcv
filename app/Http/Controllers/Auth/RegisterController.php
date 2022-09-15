@@ -56,7 +56,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:3', 'confirmed'],
-
         ]);
     }
 
@@ -85,7 +84,13 @@ class RegisterController extends Controller
                 'gender' => $data['gender'],
                 'created_at' => Carbon::now()
             ]);
-
+            //sms send metronet start
+            $client = new \GuzzleHttp\Client();
+            $phone_number = $data['phone'];
+            $message = "Please check your email, a verification link has been send.";
+            $request = $client->get("http://masking.metrotel.com.bd/smsnet/bulk/api?api_key=d5671ddcb22785c4bf647ffdc312dbcc273&mask=Creative%20IT&recipient=$phone_number&message=$message");
+            $response = $request->getBody();
+            //sms send metronet end
             return $user;
         }
         else{
