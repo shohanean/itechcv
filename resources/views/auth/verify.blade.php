@@ -17,7 +17,11 @@
     <div class="form-group text-center m-t-10">
         {{ __('Before proceeding, please check your email for a verification link.') }}
         <div class="col-12">
-            {{ __('If you did not receive the email') }},  <a href="{{ route('verification.resend') }}" class="btn btn-block btn-custom waves-effect waves-light mt-2" >{{ __('Click here to request another') }}</a>
+            {{ __('If you did not receive the email') }},
+            <form action="{{ route('verification.resend') }}" method="POST">
+                @csrf
+                <button class="btn btn-block btn-custom waves-effect waves-light mt-2"> Click here to request another </button>
+            </form>
         </div>
     </div>
 
