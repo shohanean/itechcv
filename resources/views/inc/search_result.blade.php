@@ -38,7 +38,7 @@
               $ae = explode('-', $portfolio_info->portfolio_icon);
             @endphp
             <li class="list-inline-item">
-              <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" target="_blank" href="//{{ $portfolio_info->portfolio_link }}" data-original-title="{{ studly_case(last($ae)) }}"><i class="{{ $portfolio_info->portfolio_icon }}"></i></a>
+              <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" target="_blank" href="//{{ $portfolio_info->portfolio_link }}" data-original-title="{{ last($ae) }}"><i class="{{ $portfolio_info->portfolio_icon }}"></i></a>
             </li>
           @empty
             <li class="list-inline-item">
